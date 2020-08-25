@@ -1,0 +1,33 @@
+.Product {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-shrink: 0;
+    align-items: flex-start;
+    scroll-snap-align: start;
+    padding: 5px;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.411);
+    }
+
+    &:active {
+        background-color: #eae2b77c;
+    }
+
+
+    & > * {
+        text-transform: capitalize;
+    }
+
+    h2 {
+        font-family: "Archivo";
+        border-bottom: 2px solid black;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    p {
+        font-family: "Open Sans";
+    }
+}

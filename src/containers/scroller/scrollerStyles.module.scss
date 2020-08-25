@@ -1,0 +1,14 @@
+.Scroller {
+    margin-bottom: 50px;
+    
+    &_list {
+        position: relative;
+        margin: 1px 0;
+    }
+
+    &_counter {
+        position: absolute;
+        right: 0;
+        margin: 10px;
+    }
+}

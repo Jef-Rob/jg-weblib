@@ -1,0 +1,48 @@
+.Snackbar {
+    background-color: rgba(128, 128, 128, 0.301);
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &___show {
+        animation: fadein 0.2s;
+        animation-fill-mode: forwards;
+    }
+
+    &___hidden {
+        animation: fadeout 0.2s;
+        animation-fill-mode: forwards;
+    }
+
+    div {
+        background-color: #eae2b7;
+        padding: 30px;
+        box-shadow: 0px 4px 4px -4px black;
+        border-radius: 2px;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

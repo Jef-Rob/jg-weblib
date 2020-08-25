@@ -1,0 +1,1 @@
+export { fetchProducts, addProduct, resetProducts } from './ducks/productDuck'

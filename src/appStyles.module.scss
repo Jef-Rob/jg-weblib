@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("./assets//fonts/Open_Sans/OpenSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "Archivo";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets//fonts/Archivo/Archivo-Medium.ttf");
+}
+
+.app {
+    font-family: "Open Sans";
+    display: flex;
+    flex-direction: column;
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    footer {
+        position: sticky;
+        bottom: 0;
+    }
+}

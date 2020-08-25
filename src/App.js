@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Scroller from './containers/scroller/scroller'
+import Footer from './containers/footer/footer'
+import Header from './components/header/header'
+import Banner from './components/banner/banner'
+import Snackbar from './components/snackbar/snackbar'
+import store from './redux/configureStore'
+import style from './appStyles.module.scss'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: false
+    }
+  }
+
+  showReminder() {
+    this.setState({ isVisible: true });
+
+    setTimeout(() => {
+      this.setState({ isVisible: false });
+    }, 1100)
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <div className={style.app}>
+          <Header />
+          <Banner />
+          <Scroller />
+          <Footer triggered={() => this.showReminder()} />
+          <Snackbar isVisible={this.state.isVisible} />
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;

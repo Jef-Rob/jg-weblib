@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Pour build et run le projet via une image docker (http://localhost:3001/)
 
-## Available Scripts
+  
 
-In the project directory, you can run:
+> `docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true jg-weblib:dev`
 
-### `npm start`
+  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Sinon, on peut le lancer avec la commande (http://localhost:3000/):
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  
 
-### `npm test`
+> `npm run start`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Résumé du projet
 
-### `npm run build`
+Le projet est en React/Redux/Scss.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Redux est implémenté selon le pattern Redux Ducks : https://github.com/erikras/ducks-modular-redux., Le SCSS est organisé en SCSS modules. Une librairie externe (Hammer.js) est utilisée pour détecter les événements de la gesture de la souris et des doigts.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Consigne :
 
-### `npm run eject`
+  
+>La page doit contenir les composants suivants :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+>• Un header
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+>• Le header doit toujours être visible en haut de la page peu importe l’état du scroll
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+>• Le header affiche uniquement un titre
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+>• Un footer
 
-## Learn More
+>• Le footer n’est visible que si l’utilisateur a ajouté un élément dans son panier
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+>• Au clic sur le footer, l’utilisateur reçoit un message (une alerte) et son panier est vidé
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>• Lorsque le footer est visible, il doit être placé en bas de la page peu importe l’état du scroll
 
-### Code Splitting
+>• Une image type bannière
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+>• Une liste avec infinite-scroll et lazy loading
 
-### Analyzing the Bundle Size
+>• La liste doit être fluide
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+>• La liste doit se charger au fur et à fur mesure
 
-### Making a Progressive Web App
+>• Pour chaque élément de la liste on doit avoir :
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+>• Son titre
 
-### Advanced Configuration
+>• Sa description
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+>• Sa quantité dans le panier virtuel
 
-### Deployment
+>• Au clic sur l’élément on ajoute +1 en quantité
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+>• Au swipe de la gauche vers la droite, on doit afficher un bouton qui va permettre de
 
-### `npm run build` fails to minify
+>supprimer toute la quantité de cet élément dans le panier
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  
+
+>Pour faire ce test, vous devez utiliser au minimum :
+
+>- React
+
+>- Redux
+
+>- Sass
+
+>Pour le reste, tout est libre. L’infinite scroll développé soi-même sera un plus.
